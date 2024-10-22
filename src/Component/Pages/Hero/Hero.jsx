@@ -18,7 +18,7 @@ export default function Hero() {
             Transforming Ideas into Digital Solutions
           </h1>
           <p className="mb-6 text-2xl font-extraThin font-inter mb-12">
-            We deliver innovative UI/UX design, website and app development, and social media solutions tailored to your business needs. Let’s turn your ideas into impactful digital solutions.
+            We  tt deliver innovative UI/UX design, website and app development, and social media solutions tailored to your business needs. Let’s turn your ideas into impactful digital solutions.
           </p>
           <button
             className="text-white py-2 px-[70px] rounded-full"
