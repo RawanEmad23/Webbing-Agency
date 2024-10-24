@@ -3,10 +3,10 @@ import logo from "../../assets/imgs/logo.png";
 import { Link } from "react-router-dom";
 
 export default function Navbar() {
-  const [isOpen, setIsOpen] = useState(false); // حالة لتتبع حالة القائمة
+  const [isOpen, setIsOpen] = useState(false);
 
   const toggleMenu = () => {
-    setIsOpen(!isOpen); // تغيير حالة القائمة عند النقر
+    setIsOpen(!isOpen);
   };
 
   return (
@@ -16,7 +16,9 @@ export default function Navbar() {
           <a href="/" className="flex items-center space-x-3 rtl:space-x-reverse">
             <img src={logo} className="h-11" alt="Webbing Agency Logo" />
           </a>
-          <div className="flex md:order-2 items-center space-x-3 md:space-x-0 rtl:space-x-reverse">
+          
+          {/* إخفاء زري Sign Up و Sign In في الشاشات الصغيرة */}
+          <div className="hidden md:flex md:order-2 items-center space-x-3 md:space-x-0 rtl:space-x-reverse">
             <a href="/signup" className="text-[#1F7099] font-bold mr-5">
               Sign Up
             </a>
@@ -57,6 +59,7 @@ export default function Navbar() {
             </svg>
           </button>
 
+          {/* قائمة الروابط - تظهر للأجهزة الكبيرة */}
           <div className={`items-center justify-between hidden w-full md:flex md:w-auto md:order-1 ${isOpen ? "block" : "hidden"}`} id="navbar-sticky">
             <ul className="flex flex-col p-4 md:p-0 mt-4 font-medium md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0">
               <li>
@@ -88,7 +91,7 @@ export default function Navbar() {
           </div>
         </div>
 
-        {/* قائمة منسدلة للأجهزة الصغيرة */}
+        {/* القائمة المنسدلة للأجهزة الصغيرة مع زري Sign Up و Sign In */}
         <div className={`md:hidden ${isOpen ? "block" : "hidden"}`}>
           <ul className="flex flex-col p-4 font-medium bg-white shadow-md">
             <li>
@@ -115,6 +118,18 @@ export default function Navbar() {
               <Link href="#" className="block py-2 px-3 text-gray-900 hover:bg-gray-100">
                 Contact Us
               </Link>
+            </li>
+
+            {/* زري Sign Up و Sign In يظهران في القائمة المنسدلة */}
+            <li>
+              <a href="/signup" className="block py-2 px-3 text-[#1F7099] font-bold">
+                Sign Up
+              </a>
+            </li>
+            <li>
+              <a href="/login" className="block py-2 px-3 font-bold text-[#1F7099]">
+                Sign In
+              </a>
             </li>
           </ul>
         </div>

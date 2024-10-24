@@ -6,7 +6,7 @@ import img4 from "../../../assets/imgs/image (1).png";
 
 export default function Chooseus() {
   return (
-    <div className="bg-[#EFF6FF] min-h-screen flex items-center justify-center mt-20">
+    <div className=" min-h-screen flex items-center justify-center mt-[70px]">
       <div className="container mx-auto flex flex-col lg:flex-row items-center justify-between space-y-8 lg:space-y-0 lg:space-x-8"> 
         
         {/* القسم الأيسر: الصورة */}

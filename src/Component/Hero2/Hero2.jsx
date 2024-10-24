@@ -4,11 +4,16 @@ import image from "../../assets/imgs/image (12).png";
 
 export default function Hero2() {
   const [currentImage, setCurrentImage] = useState(partimge);
+  const [isFading, setIsFading] = useState(false); // حالة للتحكم في عملية الـ fade
 
   useEffect(() => {
     const interval = setInterval(() => {
-      setCurrentImage((prevImage) => (prevImage === partimge ? image : partimge));
-    }, 1000);
+      setIsFading(true); // بدء عملية الـ fade
+      setTimeout(() => {
+        setCurrentImage((prevImage) => (prevImage === partimge ? image : partimge));
+        setIsFading(false); // انتهاء عملية الـ fade بعد تغيير الصورة
+      }, 500); // مدة الـ fade
+    }, 2000); // تغيير الصورة كل 3 ثوانٍ
 
     return () => clearInterval(interval);
   }, []);
@@ -31,7 +36,7 @@ export default function Hero2() {
         <div className="lg:w-1/2 p-4 flex justify-center lg:justify-end mt-16 hidden lg:flex">
           <img
             src={currentImage}
-            className="w-full h-[60vh] lg:h-[85vh] object-cover"
+            className={`w-full h-[60vh] lg:h-[85vh] object-cover transition-opacity duration-500 ${isFading ? 'opacity-0' : 'opacity-100'}`}
             alt="Hero Part Image"
           />
         </div>
