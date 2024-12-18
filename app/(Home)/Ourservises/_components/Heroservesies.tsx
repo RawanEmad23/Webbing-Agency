@@ -15,7 +15,7 @@ export default function Heroservices() {
           <p className="text-lg text-black mb-6">
             Explore the wide range of solutions we offer to take your business to the next level.
           </p>
-          <Link href={"conacts"}>
+          <Link href={"/Contactus"}>
           <button className='bg-gradient-to-r from-[#1f7099]  to-[#a2c6d8] px-20 py-3 text-white rounded-full'>
             Contact us
           </button>

@@ -27,19 +27,10 @@ export function HeaderApp() {
             <Image src={'/assets/imgs/logo.png'} width={1150} height={1150} className="h-11 w-auto" alt="Webbing Agency Logo" />
           </Link>
           
-          {/* إخفاء زري Sign Up و Sign In في الشاشات الصغيرة */}
-          <div className="hidden md:flex md:order-2 items-center space-x-3 md:space-x-0 rtl:space-x-reverse">
-            <Link href="/signup" className="text-[#1F7099] font-bold mr-5">
-              Sign Up
-            </Link>
-            <div className="bg-[#1F7099] px-5 py-1 rounded">
-              <Link href="/login" className="font-bold text-white">
-                Sign In
-              </Link>
-            </div>
-          </div>
+    
+      
 
-          {/* زر القائمة المنسدلة للأجهزة الصغيرة */}
+   
           <button
             onClick={toggleMenu}
             className="md:hidden flex items-center text-gray-500 focus:outline-none"
@@ -77,11 +68,7 @@ export function HeaderApp() {
                   {link.name}
                 </Link>
               </li>)}
-              {/* <li>
-                <Link href="#" className="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 dark:text-black">
-                  Services
-                </Link>
-              </li> */}
+    
               
             </ul>
           </div>
@@ -95,24 +82,10 @@ export function HeaderApp() {
                 {link.name}
               </Link>
             </li>)}
-            {/* <li>
-              <Link href="#" className="block py-2 px-3 text-gray-900 hover:bg-gray-100">
-                Services
-              </Link>
-            </li> */}
+    
             
 
-            {/* زري Sign Up و Sign In يظهران في القائمة المنسدلة */}
-            <li>
-              <Link href="/signup" className="block py-2 px-3 text-[#1F7099] font-bold">
-                Sign Up
-              </Link>
-            </li>
-            <li>
-              <Link href="/login" className="block py-2 px-3 font-bold text-[#1F7099]">
-                Sign In
-              </Link>
-            </li>
+      
           </ul>
         </div>
       </nav>

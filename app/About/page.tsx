@@ -10,7 +10,7 @@ export default function Aboutus() {
   return (
     <div className='  relative mt-36'>
       <div>
-      <h1 className="text-center text-[#1F7099] text-2xl font-semibold p-6 text-2xl font-semibold mb-12 text-xxl  font-oxanium font-thin">
+      <h1 className="text-center text-[#1F7099] text-2xl font-semibold p-6   mb-12 text-xxl  font-oxanium font-thin">
         About Us 
       </h1>
       <div className="absolute top-0 left-1/2 transform -translate-x-1/2">

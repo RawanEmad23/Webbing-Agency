@@ -3,11 +3,12 @@ import Image from "next/image";
 import Link from "next/link";
 import RichViewer from "./RichViewer";
 
-// @typescript-eslint/no-explicit-any
 export default async function FirstProject({ projects }: { projects: { title: string, slug: string, desc: [], services:{title: string , documentId: string}[], description: [], screenMobile: {url: string}, screenWeb: {url: string}, screensMobile: {
   url: string
 }[]}[]}) {
+
   return (
+  
     projects && (
       <div className="">
         <div className=" container mx-auto ">
@@ -34,11 +35,13 @@ export default async function FirstProject({ projects }: { projects: { title: st
         </div>
         <div className=" min-h-screen">
           <div className="container mx-auto flex flex-col justify-center items-center min-h-full p-4 sm:p-8">
-            {/* @typescript-eslint/no-explicit-any */}
+        
             {projects.map((project: { title: string, slug: string, desc: [], services: {title: string , documentId: string}[], description: [], screenMobile: {url: string}, screenWeb: {url: string}, screensMobile: {
               url: string
             }[]}) => (
-              <div
+
+              <Link
+              href={`/projects/${project.slug}`}
                 key={project.slug}
                 className="w-full p-4 sm:p-8 rounded-3xl bg-white shadow-[0_4px_15px_rgba(0,0,0,0.3)] flex flex-col sm:flex-row space-y-8 sm:space-y-0 sm:space-x-8 mb-8"
               >
@@ -64,16 +67,17 @@ export default async function FirstProject({ projects }: { projects: { title: st
                         <RichViewer content={project?.description} />
                       )}
                     </p>
-                    <a href="#" className="text-blue-500 mt-4 underline block">
-                      Show Full Project
-                    </a>
+                    <Link href={"/"} className="text-blue-500 mt-4 underline block">
+                    Show Full Project
+                    </Link>
+                
                   </div>
                 </div>
 
-                {/* Right section for images */}
+             
                 <div className="w-full sm:w-1/2 flex flex-col items-center">
                   <div className="flex flex-col sm:flex-row justify-between w-full mb-4 space-y-4 sm:space-y-0">
-                    {/* Main Image */}
+               
                     {project.screenMobile && (
                       <div className="w-full sm:w-[250px] h-auto sm:mr-8">
                         <Image
@@ -86,7 +90,6 @@ export default async function FirstProject({ projects }: { projects: { title: st
                       </div>
                     )}
 
-                    {/* Side Images */}
                     <div className="flex flex-col items-center">
                       {project.screensMobile &&
                         project.screensMobile.length > 0 && (
@@ -119,7 +122,7 @@ export default async function FirstProject({ projects }: { projects: { title: st
                     </div>
                   </div>
                 </div>
-              </div>
+              </Link>
             ))}
           </div>
         </div>

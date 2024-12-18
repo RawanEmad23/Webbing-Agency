@@ -2,7 +2,7 @@ import React from 'react';
 // import { CustomCarousel } from '@/components/CustomCarousel';
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from '@/components/ui/carousel';
 import Image from 'next/image';
-
+import Link from 'next/link';
 export default function Hero() {
   const heroimge = "/assets/imgs/image.png"
   const partimge = "/assets/imgs/59fe0f54cc381ab9e10410ad71c48cf4.png";
@@ -50,6 +50,7 @@ export default function Hero() {
             <p className="mb-6 text-2xl font-extraThin font-inter">
               We  tt deliver innovative UI/UX design, website and app development, and social media solutions tailored to your business needs. Let’s turn your ideas into impactful digital solutions.
             </p>
+            <Link href={"/Contactus"}>
             <button
               className="text-white py-2 px-[70px] rounded-full"
               style={{
@@ -58,6 +59,8 @@ export default function Hero() {
             >
               Get Started
             </button>
+            </Link>
+       
           </div>
           <div className="lg:w-1/2 p-4 justify-end hidden lg:flex">
             <Image

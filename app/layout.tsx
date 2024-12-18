@@ -31,8 +31,9 @@ export default function RootLayout({
       >
         <HeaderApp />
         {children}
+        <Footer></Footer>
       </body>
-      <Footer></Footer>
+
     </html>
   );
 }
